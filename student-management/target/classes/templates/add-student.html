@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Student</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Add Student</h1>
+
+    <form th:action="@{/save}" th:object="${student}" method="post">
+
+        <label>Name</label><br>
+        <input type="text" th:field="*{name}" placeholder="Enter Name" required>
+        <br><br>
+
+        <label>Email</label><br>
+        <input type="email" th:field="*{email}" placeholder="Enter Email" required>
+        <br><br>
+
+        <label>Course</label><br>
+        <input type="text" th:field="*{course}" placeholder="Enter Course" required>
+        <br><br>
+
+        <button type="submit">Save Student</button>
+
+    </form>
+
+    <br>
+
+    <a th:href="@{/students}">Back to Student List</a>
+
+</div>
+
+</body>
+</html>

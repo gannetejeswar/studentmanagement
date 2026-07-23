@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<title>Dashboard</title>
+
+<link rel="stylesheet"
+th:href="@{/css/dashboard.css}">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<h2>Student Management</h2>
+
+<a href="/">Home</a>
+
+<a href="/students">Students</a>
+
+<a href="/add">Add Student</a>
+
+<a href="/logout">Logout</a>
+
+</div>
+
+<div class="content">
+
+<h1>Dashboard</h1>
+
+<div class="cards">
+
+<div class="card">
+
+<h2>Total Students</h2>
+
+<h1 th:text="${students.size()}"></h1>
+
+</div>
+
+<div class="card">
+
+<h2>Total Courses</h2>
+
+<h1>10</h1>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

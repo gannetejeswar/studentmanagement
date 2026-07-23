@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Student Management System</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Student Management System</h1>
+
+    <form th:action="@{/save}" method="post">
+
+        <input type="text"
+               name="name"
+               placeholder="Enter Student Name"
+               required>
+
+        <input type="email"
+               name="email"
+               placeholder="Enter Email"
+               required>
+
+        <input type="text"
+               name="course"
+               placeholder="Enter Course"
+               required>
+
+        <button type="submit">
+            Add Student
+        </button>
+
+    </form>
+
+    <hr>
+
+    <table>
+
+        <thead>
+
+        <tr>
+
+            <th>ID</th>
+
+            <th>Name</th>
+
+            <th>Email</th>
+
+            <th>Course</th>
+
+            <th>Action</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr th:each="student : ${students}">
+
+            <td th:text="${student.id}"></td>
+
+            <td th:text="${student.name}"></td>
+
+            <td th:text="${student.email}"></td>
+
+            <td th:text="${student.course}"></td>
+
+            <td>
+
+
+<a th:href="@{/edit/{id}(id=${student.id})}">
+Edit
+</a>
+
+|
+
+<a th:href="@{/delete/{id}(id=${student.id})}">
+Delete
+</a>
+
+
+
+            </td>
+
+        </tr>
+
+        </tbody>
+
+    </table>
+
+</div>
+
+</body>
+</html>
